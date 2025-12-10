@@ -1,0 +1,220 @@
+/* GENERAL */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    line-height:1.6;
+    background:#fafafa;
+}
+
+/* HEADER */
+header{
+    background:#D32F2F;
+    color:white;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+header .logo{
+    font-size:20px;
+    font-weight:bold;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    margin-left:10px;
+}
+
+/* HERO SECTIONS */
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:35px 20px;
+    flex-wrap:wrap;
+}
+
+.hero img{
+    width:350px;
+    max-width:100%;
+    border-radius:15px;
+}
+
+/* BUTTONS */
+.btn{
+    padding:12px 24px;
+    border-radius:50px;
+    font-weight:bold;
+    text-decoration:none;
+    background:#D32F2F;
+    color:white;
+    border:2px solid #D32F2F;
+    display:inline-block;
+    margin-right:10px;
+}
+
+.btn.outline{
+    background:white;
+    color:#D32F2F;
+}
+
+/* CONTENT AREA */
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.container img{
+    max-width:100%;
+    border-radius:10px;
+}
+
+/* LIST STYLING */
+ul, ol{
+    margin-left:20px;
+    padding-left:10px;
+}
+
+ul{
+    list-style:none;
+}
+
+ul li{
+    padding-left:25px;
+    position:relative;
+}
+
+ul li::before{
+    content:"★";
+    color:#D32F2F;
+    position:absolute;
+    left:0;
+}
+
+/* CARDS */
+.cards{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    justify-content:center;
+}
+
+.card{
+    background:white;
+    border:1px solid #ddd;
+    padding:12px 15px;
+    border-radius:10px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.05);
+    text-align:center;
+    min-width:140px;
+    font-weight:600;
+}
+
+/* FORMS */
+/* FORM CONTAINER */
+form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:450px;
+    margin:auto;
+}
+
+/* LABELS */
+form label{
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:-4px;
+}
+
+/* INPUT BOXES */
+form input,
+form select{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:14px;
+    width:100%;
+}
+
+/* FULL-WIDTH BUTTON */
+form .btn,
+form button{
+    padding:12px 20px;
+    border-radius:50px;
+    font-weight:700;
+    background:#D32F2F;
+    color:white;
+    border:2px solid #D32F2F;
+    cursor:pointer;
+    width:100%;
+    text-align:center;
+}
+
+/* CHECKBOX TEXT ALIGN */
+form .terms,
+form label.terms{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-size:13px;
+}
+
+/* NOTE/TEXT HINT */
+form small,
+.note{
+    font-size:13px;
+    color:gray;
+    display:block;
+    margin-top:4px;
+}
+
+/* MOBILE FRIENDLY */
+@media(max-width:768px){
+    form{
+        width:100%;
+    }
+}
+
+/* FOOTER */
+footer{
+    background:#eee;
+    text-align:center;
+    padding:15px;
+    margin-top:20px;
+    font-size:14px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    header{
+        flex-direction:column;
+        text-align:center;
+    }
+    
+    nav{
+        margin-top:10px;
+    }
+    
+    nav a{
+        display:inline-block;
+        margin:6px;
+    }
+    
+    .hero{
+        text-align:center;
+    }
+    
+    .hero img{
+        margin-top:15px;
+    }
+}
