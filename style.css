@@ -1,220 +1,233 @@
-/* GENERAL */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* ========== Global Reset & Base ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: Arial, sans-serif;
-    line-height:1.6;
-    background:#fafafa;
+/* Use a nice readable font, fallback stack */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
 }
 
-/* HEADER */
-header{
-    background:#D32F2F;
-    color:white;
-    padding:15px 20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
+/* Links default */
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-header .logo{
-    font-size:20px;
-    font-weight:bold;
+/* Smooth scroll behavior for in-page navigation (if using anchors) */
+html {
+  scroll-behavior: smooth;
 }
 
-nav a{
-    text-decoration:none;
-    color:white;
-    margin-left:10px;
+/* ========== Navbar ========== */
+.navbar {
+  background-color: #c62828; /* deep red for blood bank theme */
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* HERO SECTIONS */
-.hero{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:35px 20px;
-    flex-wrap:wrap;
+.navbar .brand {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-.hero img{
-    width:350px;
-    max-width:100%;
-    border-radius:15px;
+.navbar .nav-links {
+  display: flex;
+  gap: 1rem;
 }
 
-/* BUTTONS */
-.btn{
-    padding:12px 24px;
-    border-radius:50px;
-    font-weight:bold;
-    text-decoration:none;
-    background:#D32F2F;
-    color:white;
-    border:2px solid #D32F2F;
-    display:inline-block;
-    margin-right:10px;
+.navbar .nav-links a {
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-.btn.outline{
-    background:white;
-    color:#D32F2F;
+.navbar .nav-links a:hover,
+.navbar .nav-links a:focus {
+  background-color: rgba(255,255,255,0.2);
 }
 
-/* CONTENT AREA */
-.container{
-    max-width:900px;
-    margin:auto;
-    padding:20px;
+/* Optional navbar toggle button for mobile */
+.navbar .nav-toggle {
+  display: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #fff;
 }
 
-.container img{
-    max-width:100%;
-    border-radius:10px;
+/* ========== Container / Layout Helpers ========== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
-/* LIST STYLING */
-ul, ol{
-    margin-left:20px;
-    padding-left:10px;
+/* Sections */
+section {
+  margin-bottom: 3rem;
 }
 
-ul{
-    list-style:none;
+/* Headings */
+h1, h2, h3 {
+  margin-bottom: 1rem;
+  color: #b71c1c;
 }
 
-ul li{
-    padding-left:25px;
-    position:relative;
+/* Buttons */
+.btn {
+  display: inline-block;
+  background-color: #d32f2f;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
-ul li::before{
-    content:"★";
-    color:#D32F2F;
-    position:absolute;
-    left:0;
+.btn:hover {
+  background-color: #b71c1c;
+  transform: translateY(-2px);
 }
 
-/* CARDS */
-.cards{
-    display:flex;
-    flex-wrap:wrap;
-    gap:15px;
-    justify-content:center;
+.btn:active {
+  transform: translateY(0);
 }
 
-.card{
-    background:white;
-    border:1px solid #ddd;
-    padding:12px 15px;
-    border-radius:10px;
-    box-shadow:0 2px 5px rgba(0,0,0,0.05);
-    text-align:center;
-    min-width:140px;
-    font-weight:600;
+/* ========== Cards / Info Boxes ========== */
+.card {
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-/* FORMS */
-/* FORM CONTAINER */
-form{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-    max-width:450px;
-    margin:auto;
+/* ========== Form Styling ========== */
+/* If you have forms (donor registration, request, login) */
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0 1rem 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* LABELS */
-form label{
-    font-size:14px;
-    font-weight:600;
-    margin-bottom:-4px;
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #b71c1c;
+  box-shadow: 0 0 5px rgba(183,28,28, 0.3);
 }
 
-/* INPUT BOXES */
-form input,
-form select{
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:6px;
-    font-size:14px;
-    width:100%;
+label {
+  display: block;
+  font-weight: 500;
+  margin-top: 1rem;
+  color: #444;
 }
 
-/* FULL-WIDTH BUTTON */
-form .btn,
-form button{
-    padding:12px 20px;
-    border-radius:50px;
-    font-weight:700;
-    background:#D32F2F;
-    color:white;
-    border:2px solid #D32F2F;
-    cursor:pointer;
-    width:100%;
-    text-align:center;
+.form-group {
+  margin-bottom: 1rem;
 }
 
-/* CHECKBOX TEXT ALIGN */
-form .terms,
-form label.terms{
-    display:flex;
-    align-items:center;
-    gap:6px;
-    font-size:13px;
+/* Form Buttons */
+.btn-primary {
+  background-color: #c62828;
 }
 
-/* NOTE/TEXT HINT */
-form small,
-.note{
-    font-size:13px;
-    color:gray;
-    display:block;
-    margin-top:4px;
+.btn-primary:hover {
+  background-color: #a71f1f;
 }
 
-/* MOBILE FRIENDLY */
-@media(max-width:768px){
-    form{
-        width:100%;
-    }
+/* ========== Tables (if there is table data) ========== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
 }
 
-/* FOOTER */
-footer{
-    background:#eee;
-    text-align:center;
-    padding:15px;
-    margin-top:20px;
-    font-size:14px;
+th, td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  text-align: left;
 }
 
-/* RESPONSIVE */
-@media(max-width:768px){
-    header{
-        flex-direction:column;
-        text-align:center;
-    }
-    
-    nav{
-        margin-top:10px;
-    }
-    
-    nav a{
-        display:inline-block;
-        margin:6px;
-    }
-    
-    .hero{
-        text-align:center;
-    }
-    
-    .hero img{
-        margin-top:15px;
-    }
+thead {
+  background-color: #b71c1c;
+  color: #fff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* ========== Footer ========== */
+.footer {
+  background-color: #333;
+  color: #eee;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.footer a {
+  color: #ddd;
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
+/* ========== Responsive / Mobile ========== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar .nav-links {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .navbar .nav-links a {
+    width: 100%;
+    padding: 0.75rem 1rem;
+  }
+  .navbar .nav-toggle {
+    display: block;
+  }
+}
+
+/* Optional: smooth card hover effect */
+.card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.2s ease;
 }
